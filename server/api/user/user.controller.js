@@ -15,6 +15,7 @@ exports.getUsers = (req, res, next) => {
 };
 
 exports.createUser = (req, res, next) => {
+    console.log(req.body);
     const newUser = new UserModel({
         firstName: req.body.firstName,
         lastName: req.body.lastName
@@ -22,6 +23,7 @@ exports.createUser = (req, res, next) => {
     newUser
         .save()
         .then((result) => {
+            console.log(result);
             res.status(201).json({
                 user: result
             });
@@ -58,4 +60,15 @@ exports.deleteUserbyId = (req, res, next) => {
         });
     });
 };
+
+exports.patch=(req,res,next)=> {
+    UserModel.findByIdAndUpdate(req.params.id).then((result)=>{
+        res.status(200).json(result);
+    }).catch(err => {
+        res.status(404).json({
+            error:err
+        });
+    });
+    };
+
 

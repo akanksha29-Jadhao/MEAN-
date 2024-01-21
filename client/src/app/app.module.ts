@@ -1,20 +1,20 @@
 
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-import { UsersComponent } from "./users/users.component";
+import { EmployeesComponent } from "./employees/employees.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
-import { AddUsersComponent } from "./add-users/add-users.component";
+import { AddEmployeeComponent } from "./add-employee/add-employees.component";
+
 
 @NgModule({
     declarations: [
         AppComponent,
-        UsersComponent,
-        AddUsersComponent,
+        EmployeesComponent,
+        AddEmployeeComponent
     ],
     imports: [
         CommonModule,
@@ -27,4 +27,3 @@ import { AddUsersComponent } from "./add-users/add-users.component";
 })
 export class AppModule {
 }
-import { AddUsersComponent } from "./add-users/add-users.component";

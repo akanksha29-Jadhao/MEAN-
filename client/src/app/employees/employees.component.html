@@ -1,0 +1,12 @@
+<button (click)="getEmployees()">Get employees</button>
+<button (click)="goToAddEmployee()">Go to Add employee</button>
+
+<ul>
+  @for (employee of employees; track employee._id) {
+  <li>
+    {{ employee.firstName }}
+    {{ employee.lastName }}
+    <button (click)="deleteEmployee(employee._id)">DEL</button>
+  </li>
+  }
+</ul>

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { UsersComponent } from './users/users.component';
+// import { UsersComponent } from './employees/employees.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,12 @@ import { UsersComponent } from './users/users.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  users: any = [];
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  Employees: any = [];
 
-  newUser = {
+  newEmployee = {
     firstName: '',
     lastName: '',
   }
@@ -21,12 +25,12 @@ export class AppComponent {
   constructor(private http: HttpClient) {
   }
 
-  getUsers() {
-    this.http.get('http://localhost:3000/users').subscribe({
+  getEmployees() {
+    this.http.get('http://localhost:3000/employees').subscribe({
       next: (res: any) => {
         console.log(res);
 
-        this.users = res.users;
+        this.Employees = res.employees;
       },
       error: (err) => {
         console.log(err);
@@ -34,13 +38,13 @@ export class AppComponent {
     })
   }
 
-  createUser() {
-    this.http.post('http://localhost:3000/users', this.newUser).subscribe({
+  createEmployee() {
+    this.http.post('http://localhost:3000/employees', this.newEmployee).subscribe({
       next: (res: any) => {
         console.log(res);
-        this.newUser.firstName = '';
-        this.newUser.lastName = '';
-        this.getUsers();
+        this.newEmployee.firstName = '';
+        this.newEmployee.lastName = '';
+        this.getEmployees();
       },
       error: (err) => {
         console.log(err);
@@ -48,10 +52,10 @@ export class AppComponent {
     })
   }
 
-  deleteUser(id: any) {
-    this.http.delete('http://localhost:3000/users/' + id).subscribe({
+  deleteEmployee(id: any) {
+    this.http.delete('http://localhost:3000/employees/' + id).subscribe({
       next: (res: any) => {
-        this.getUsers();
+        this.getEmployees();
       },
       error: (err: any) => {
       },

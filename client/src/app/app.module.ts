@@ -8,20 +8,22 @@ import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AddEmployeeComponent } from "./add-employee/add-employees.component";
-
-
+import { RegisterComponent } from "./register/register.component";
+import {LoginComponent} from "./login/login.component";
 @NgModule({
     declarations: [
         AppComponent,
         EmployeesComponent,
-        AddEmployeeComponent
+        AddEmployeeComponent,
+        RegisterComponent,
+        LoginComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule, 
-        FormsModule,
+        FormsModule
     ],
     bootstrap: [AppComponent]
 })

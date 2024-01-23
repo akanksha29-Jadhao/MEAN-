@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const EmployeeController = require('./employee.controller')
 
-router.get('/', EmployeeController.getEmployee);
+router.get('/', EmployeeController.getEmployees);
 
 router.get('/:id',EmployeeController.getEmployeeById)
 
@@ -10,8 +10,7 @@ router.post('/', EmployeeController.createEmployee);
 
 router.put('/:id', EmployeeController.updateEmployee);
 
-router.delete('/:id',EmployeeController.deleteEmployeebyId);
+router.delete('/:id',EmployeeController.deleteEmployeeById);
 
-router.patch('/:id',EmployeeController.patchemp)
 
 module.exports = router;

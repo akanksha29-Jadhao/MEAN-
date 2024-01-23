@@ -13,7 +13,6 @@ export class AddEmployeeComponent {
     firstName: '',
     lastName: '',
   }
-  newEmployees: any;
 
   constructor(
     private http: HttpClient,
@@ -21,7 +20,7 @@ export class AddEmployeeComponent {
   ) {}
 
   createEmployee() {
-    this.http.post('http://localhost:3000/employees', this.newEmployees).subscribe({
+    this.http.post('http://localhost:3000/employees', this.newEmployee).subscribe({
       next: (res: any) => {
         console.log(res);
         this.newEmployee.firstName = '';

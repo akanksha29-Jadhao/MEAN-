@@ -16,5 +16,30 @@ exports.registerUser = async (req, res, next) => {
         res.status(500).json({
             error: error
         });
+    };
+}
+
+exports.loginUser=async(req,res,next)=> {
+    try {
+        const existingsUser=await UserModel.findOne({
+            email:req.body.email,
+            password:req.body.password
+        });
+        if (existingsUser) {
+            return res.status(201).json({
+                message:'User logged In'
+            });
+            
+        } else {
+            return res.status(403).json({
+                message:'Login Failed'
+            });
+            
+        }
+    } catch (error) {
+        res.status(500).json({
+            error:error
+        });
+        
     }
 }

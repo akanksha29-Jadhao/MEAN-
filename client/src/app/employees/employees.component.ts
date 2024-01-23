@@ -12,7 +12,7 @@ export class EmployeesComponent {
 goTocreateEmployee() {
 throw new Error('Method not implemented.');
 }
-  employees: any;
+  employees: any = [];
  
 
 
@@ -21,15 +21,19 @@ throw new Error('Method not implemented.');
     private router: Router
   ) {
   }
+
   goToAddEmployee() {
-    this.router.navigate(['/add-employee']);
+    this.router.navigate(['/addEmployee']);
   }
+
   getEmployees() {
     this.http.get('http://localhost:3000/employees').subscribe({
       next: (res: any) => {
         console.log(res);
 
-        this.getEmployees = res.employees;
+        this.employees = res.employees;
+        console.log(this.employees);
+        
       },
       error: (err) => {
         console.log(err);

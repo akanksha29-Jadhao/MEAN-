@@ -1,12 +1,32 @@
-<button (click)="getEmployees()">Get employees</button>
-<button (click)="goToAddEmployee()" >add employee</button>
+
 
 <ul>
   @for (employee of employees; track employee._id) {
   <li>
+ 
     {{ employee.firstName }}
     {{ employee.lastName }}
+   
     <button (click)="deleteEmployee(employee._id)">DEL</button>
+
   </li>
   }
-</ul>
+
+  <div class="container"> 
+    <button (click)="getEmployees()">Get employees</button> <br>
+<button (click)="goToAddEmployee()" >add employee</button> <br>
+    <button (click)="register()">Register</button> <br>
+    <button (click)="login()">Login</button> <br>
+
+      <!-- <style> 
+    .container { 
+        display: flex; 
+        justify-content: space-between; 
+    } 
+</style>  -->
+  
+
+  
+
+  
+

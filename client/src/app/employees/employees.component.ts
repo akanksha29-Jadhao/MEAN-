@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrl: './employees.component.scss'
 })
 export class EmployeesComponent {
-
+  goTocreateEmployee() {
+    throw new Error('Method not implemented.');
+    }
   employees: any = [];
  
 
@@ -20,7 +22,7 @@ export class EmployeesComponent {
   }
 
   goToAddEmployee() {
-    this.router.navigate(['/addEmployee']);
+    this.router.navigate(['/add-employee']);
   }
 
   getEmployees() {
@@ -48,6 +50,14 @@ export class EmployeesComponent {
       error: (err: any) => {
       },
     });
+  }
+  
+register() {
+  this.router.navigate(['/register']);
+}
+
+  login() {
+    this.router.navigate(['/login']);
   }
 }
 

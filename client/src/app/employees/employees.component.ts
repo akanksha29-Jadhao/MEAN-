@@ -9,12 +9,9 @@ import { Router } from '@angular/router';
   styleUrl: './employees.component.scss'
 })
 export class EmployeesComponent {
-goTocreateEmployee() {
-throw new Error('Method not implemented.');
-}
+
   employees: any = [];
  
-
 
   constructor(
     private http: HttpClient,

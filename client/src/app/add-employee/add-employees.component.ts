@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employees.component.html',
@@ -37,3 +38,6 @@ goToViewEmployees() {
   this.router.navigate(['/employees']);
 }
 }
+
+
+

@@ -6,12 +6,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-    {
-        path: '', redirectTo : 'employees', pathMatch : 'full'
-
-    },
+    {path: '', redirectTo : 'employees', pathMatch : 'full'},
     { path : 'employees', component : EmployeesComponent},
-    {  path : 'addEmployee', component : AddEmployeeComponent },
+    {  path : 'add-employee', component : AddEmployeeComponent },
     { path:'register',component:RegisterComponent },
     { path:'login',component:LoginComponent}
 ];
